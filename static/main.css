@@ -1,0 +1,39 @@
+form
+{
+    width:50%;
+    height:65%;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    margin-left:15%;
+    margin-right:30px;
+    margin-top:50px;
+    margin-bottom:30px;
+    
+}
+.text_in
+{
+  width:70%;
+  height:15%;
+  border-left:1px solid  black;
+  border-top:1px solid black;
+  border-right:1px solid black;
+  border-bottom:1px solid black;
+  margin-top:5%;
+  margin-left:15%;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+  padding-bottom:3px;
+}
+#sub
+{
+  width:40%;
+  height:15%;
+  text-align: center;
+  background: rgb(196, 184, 184);
+  border-radius: 1px solid gray;
+  margin-top:15%;
+  margin-left:28%;
+}

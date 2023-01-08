@@ -1,12 +1,13 @@
 <html>
     <head>
+        <link rel="stylesheet" href="/static/main.css">
     </head>
     <body>
         <h1>Document classification of research papers with NLP techniques</h1>
         <form action="/predict" method="POST">
-            <input type="text" name="data1" placeholder="Enter text 1"><br>
-            <input type="text" name="data2" placeholder="Enter text 2"><br>
-            <input type="submit" name="Predict">
+            <textarea name="data1" placeholder="Enter text 1" class="text_in"></textarea><br>
+            <textarea type="text" name="data2" placeholder="Enter text 2" class="text_in"></textarea><br>
+            <input type="submit" name="Predict" id="sub" value="Predict">
         </form>
         {%if prediction%}
          <p>{{prediction}}</p>
