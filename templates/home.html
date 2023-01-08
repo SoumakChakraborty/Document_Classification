@@ -8,6 +8,8 @@
             <input type="text" name="data2" placeholder="Enter text 2"><br>
             <input type="submit" name="Predict">
         </form>
-        <p>{{prediction}}</p>
+        {%if prediction%}
+         <p>{{prediction}}</p>
+        {%endif%}
     </body>
 </html>
