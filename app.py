@@ -6,17 +6,19 @@ from scipy.spatial.distance import cosine
 from flask import Flask,request,app,jsonify,render_template
 app=Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods=['GET'])
 def home():
     return render_template('home.html')
-
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['GET','POST'])
 def predict():
+    if request.method=='GET':
+        return render_template('home.html')
     model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
     model_t=tf.keras.models.load_model('./best_model/check')
-    data=request.json['data']
-    ttx1=[data[0]]
-    ttx2=[data[1]]
+    data1=request.form.get('data1')
+    data2=request.form.get('data2')
+    ttx1=[data1]
+    ttx2=[data2]
     emb1=model.encode(ttx1)
     emb2=model.encode(ttx2)
     emb1=emb1[0]
@@ -28,7 +30,7 @@ def predict():
     er=np.append(er,d)
     er=er.reshape(1,er.shape[0],1)
     res=np.where(model_t.predict(er)[0][0]>=.5,1,0)
-    return jsonify(str(res))
+    return render_template('home.html',prediction="Prediction:{}".format(str(res)))
 
 if __name__=='__main__':
     app.run(debug=True)
