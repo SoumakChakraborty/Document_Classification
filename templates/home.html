@@ -4,13 +4,13 @@
     </head>
     <body>
         <h1>Document classification of research papers with NLP techniques</h1>
-        <form action="/predict" method="POST">
-            <textarea name="data1" placeholder="Enter text 1" class="text_in"></textarea><br>
-            <textarea type="text" name="data2" placeholder="Enter text 2" class="text_in"></textarea><br>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="file" name="data1" class="text_in"><br>
+            <input type="file" name="data2" class="text_in"><br>
             <input type="submit" name="Predict" id="sub" value="Predict">
         </form>
         {%if prediction%}
-         <p>{{prediction}}</p>
+         <p id="pred">{{prediction}}</p>
         {%endif%}
     </body>
 </html>
