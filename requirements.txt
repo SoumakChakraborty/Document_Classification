@@ -6,3 +6,5 @@ torch
 transformers
 sentence-transformers
 gunicorn
+PyPDF2
+scipy
