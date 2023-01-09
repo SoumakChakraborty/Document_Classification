@@ -33,11 +33,11 @@ def extract_text_pdf(pth,file_name,q):
 
 @app.route('/',methods=['GET'])
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 @app.route('/predict',methods=['GET','POST'])
 def predict():
     if request.method=='GET':
-        return render_template('home.html')
+        return render_template('index.html')
     model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
     model_t=tf.keras.models.load_model('./best_model/check')
     #data1=request.form.get('data1')
@@ -82,7 +82,7 @@ def predict():
         outp='Same document with probability {}'.format(str(model_t.predict(er)[0][0]))
     else:
         outp='Different document with probability {}'.format(str(1-model_t.predict(er)[0][0]))
-    return render_template('home.html',prediction="Prediction:{}".format(outp))
+    return render_template('index.html',prediction="Prediction:{}".format(outp))
 
 if __name__=='__main__':
     app.run(debug=True)
