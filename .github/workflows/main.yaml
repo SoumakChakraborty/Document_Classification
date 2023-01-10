@@ -30,7 +30,7 @@ jobs:
           
           # Heroku API key associated with provided user's email.
           # Api Key is available under your Heroku account settings.
-          azure_api_key: ${{ secrets.AZURE_API_KEY }}
+          #azure_api_key: ${{ secrets.AZURE_API_KEY }}
           
           # Name of the heroku application to which the build is to be sent.
           azure_app_name: ${{ secrets.AZURE_APP_NAME }}
