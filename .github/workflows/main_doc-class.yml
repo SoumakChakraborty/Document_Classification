@@ -39,6 +39,11 @@ jobs:
           path: |
             . 
             !venv/
+dockerfile_directory: ./
+
+     # (Optional, default: "Dockerfile")
+     # Dockerfile name.
+dockerfile_name: Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
