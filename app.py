@@ -10,6 +10,8 @@ import shutil
 import re
 from pathlib import Path
 import threading
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 app=Flask(__name__)
 def extract_text_pdf(pth,file_name,q):
     #print(pth,file_name)
@@ -85,4 +87,4 @@ def predict():
     return render_template('index.html',prediction="Prediction:{}".format(outp))
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
