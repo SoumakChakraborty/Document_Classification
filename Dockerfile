@@ -1,8 +1,10 @@
 FROM python:3.8
 COPY . /app
 WORKDIR /app
-RUN pip install tensorflow
+#RUN pip install tensorflow
 EXPOSE 5000
 RUN pip install -r requirements.txt
 #CMD gunicorn --bind=0.0.0.0 --timeout 600 app:app
+RUN docker pull tensorflow/tensorflow
+RUN docker run -it --rm tensorflow/tensorflow
 CMD python app.py
