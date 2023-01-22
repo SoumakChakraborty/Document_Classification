@@ -1,11 +1,10 @@
-pandas
-numpy
-tensorflow
-Flask
-torch
+pandas==1.4.4
+qtensorflow==2.10.0
+Flask==1.1.2
+torch==1.13.0
 transformers
 sentence-transformers
 gunicorn
-PyPDF2
+PyPDF2==2.11.1
 Jinja2
-scipy
+scipy==1.9.1
