@@ -44,7 +44,7 @@ def predict():
     model_t=tf.keras.models.load_model('./best_model/check')
     #data1=request.form.get('data1')
     #data2=request.form.get('data2')
-    print(request.files)
+    #print(request.files)
     data1=request.files['data1']
     data2=request.files['data2']
     if Path('./temp_data').exists()==False:

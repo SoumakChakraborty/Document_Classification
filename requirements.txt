@@ -1,5 +1,6 @@
 pandas
 numpy
+tensorflow
 Flask
 torch
 transformers
