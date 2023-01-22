@@ -1,6 +1,6 @@
 pandas
 tensorflow==2.10.0
-Flask==1.1.2
+Flask==2.2.0
 torch==1.13.0
 transformers
 sentence-transformers
