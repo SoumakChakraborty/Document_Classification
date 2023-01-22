@@ -15,7 +15,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 app=Flask(__name__)
 def extract_text_pdf(pth,file_name,q):
     #print(pth,file_name)
-    file=pth+'\\'+file_name
+    file=pth+'/'+file_name
     #print(file)
     pdf=PyPDF2.PdfReader(file)
     pg=pdf.getPage(0)
